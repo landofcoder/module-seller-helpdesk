@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+  * Landofcoder
+  *
+  * NOTICE OF LICENSE
+  *
+  * This source file is subject to the Landofcoder.com license that is
+  * available through the world-wide-web at this URL:
+  * https://landofcoder.com/terms
+  *
+  * DISCLAIMER
+  *
+  * Do not edit or add to this file if you wish to upgrade this extension to newer
+  * version in the future.
+  *
+  * @category   Landofcoder
+  * @package    Lofmp_HelpDesk
+  * @copyright  Copyright (c) 2021 Landofcoder (https://www.landofcoder.com/)
+  * @license    https://landofcoder.com/terms
+  -->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <columns name="lofhelpdesk_quickanswer_columns">
+        <column name="seller_id" class="Lofmp\HelpDesk\Ui\Component\Listing\Column\SellerName">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Lof_HelpDesk/js/grid/columns/link</item>
+                    <item name="sortOrder" xsi:type="number">3</item>
+                </item>
+            </argument>
+            <settings>
+                <options class="Lofmp\HelpDesk\Model\Config\Source\Sellers"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">Seller</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

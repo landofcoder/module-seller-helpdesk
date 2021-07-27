@@ -1,0 +1,22 @@
+{
+    "name": "landofcoder/module-seller-helpdesk",
+    "description": "Helpdesk for Seller",
+    "require": {
+        "landofcoder/module-marketplace":"*",
+        "landofcoder/module-helpdesk":"*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Lofmp\\HelpDesk\\": ""
+        }
+    }
+}

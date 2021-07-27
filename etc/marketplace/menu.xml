@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+  * Landofcoder
+  *
+  * NOTICE OF LICENSE
+  *
+  * This source file is subject to the Landofcoder.com license that is
+  * available through the world-wide-web at this URL:
+  * https://landofcoder.com/terms
+  *
+  * DISCLAIMER
+  *
+  * Do not edit or add to this file if you wish to upgrade this extension to newer
+  * version in the future.
+  *
+  * @category   Landofcoder
+  * @package    Lofmp_HelpDesk
+  * @copyright  Copyright (c) 2021 Landofcoder (https://www.landofcoder.com/)
+  * @license    https://landofcoder.com/terms
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add 
+        id="Lofmp_HelpDesk::helpdesk" 
+        title="HelpDesk" 
+        module="Lofmp_HelpDesk" 
+        sortOrder="290" 
+        icon="fa fa-gavel" 
+        resource="Lofmp_HelpDesk::helpdesk"
+      />
+    	<add 
+        id="Lofmp_HelpDesk::ticket_index" 
+        title="Manage Tickets" 
+        module="Lofmp_HelpDesk" 
+        action="lofmphelpdesk/ticket/index" 
+        sortOrder="20"
+        resource="Lofmp_HelpDesk::ticket_index" 
+        parent="Lofmp_HelpDesk::helpdesk" 
+        />
+    	<add 
+        id="Lofmp_HelpDesk::quick_answer" 
+        title="Manage Quick Answers" 
+        module="Lofmp_HelpDesk" 
+        action="lofmphelpdesk/quickanswer/index" 
+        sortOrder="30"
+        resource="Lofmp_HelpDesk::quickanswer_index" 
+        parent="Lofmp_HelpDesk::helpdesk" 
+        />
+    	<add 
+        id="Lofmp_HelpDesk::report" 
+        title="Report" 
+        module="Lofmp_HelpDesk" 
+        action="lofmphelpdesk/report/index" 
+        sortOrder="35"  
+        resource="Lofmp_HelpDesk::report" 
+        parent="Lofmp_HelpDesk::helpdesk" 
+        />
+    </menu>
+</config>
