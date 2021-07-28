@@ -22,6 +22,7 @@
 namespace Lofmp\HelpDesk\Controller\Marketplace;
 
 use Lof\HelpDesk\Model\QuickanswerFactory;
+use Lof\HelpDesk\Model\TicketFactory;
 use Lof\MarketPlace\Helper\Data;
 use Magento\Customer\Model\Session;
 use Magento\Customer\Model\Url;
@@ -59,12 +60,18 @@ abstract class Delete extends \Magento\Framework\App\Action\Action
     private $quickanswerFactory;
 
     /**
+     * @var TicketFactory
+     */
+    private $ticketFactory;
+
+    /**
      * @param Context $context
      * @param Session $customerSession
      * @param Url $customerUrl
      * @param Filter $filter
      * @param Data $helper
      * @param QuickanswerFactory $quickanswerFactory
+     * @param TicketFactory $ticketFactory
      */
     public function __construct(
         Context $context,
@@ -72,7 +79,8 @@ abstract class Delete extends \Magento\Framework\App\Action\Action
         Url $customerUrl,
         Filter $filter,
         Data $helper,
-        QuickanswerFactory $quickanswerFactory
+        QuickanswerFactory $quickanswerFactory,
+        TicketFactory $ticketFactory
     ) {
         parent::__construct($context);
         $this->_customerSession = $customerSession;
@@ -80,6 +88,7 @@ abstract class Delete extends \Magento\Framework\App\Action\Action
         $this->helper = $helper;
         $this->filter = $filter;
         $this->quickanswerFactory = $quickanswerFactory;
+        $this->ticketFactory = $ticketFactory;
     }
 
     /**
@@ -114,10 +123,25 @@ abstract class Delete extends \Magento\Framework\App\Action\Action
      * @param $quickanswerId
      * @return bool
      */
-    public function validate($quickanswerId)
+    public function validateQuickanswer($quickanswerId)
     {
         $sellerId = $this->helper->getSellerId();
         $auction = $this->quickanswerFactory->create()->load($quickanswerId);
+        if ($auction->getSellerId() != $sellerId) {
+            $this->messageManager->addErrorMessage(__('You don\'t have permission to delete this'));
+            return false;
+        } else {
+            return true;
+        }
+    }
+    /**
+     * @param $tickeId
+     * @return bool
+     */
+    public function validateTicket($tickeId)
+    {
+        $sellerId = $this->helper->getSellerId();
+        $auction = $this->ticketFactory->create()->load($tickeId);
         if ($auction->getSellerId() != $sellerId) {
             $this->messageManager->addErrorMessage(__('You don\'t have permission to delete this'));
             return false;
