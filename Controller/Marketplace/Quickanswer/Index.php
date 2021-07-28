@@ -55,12 +55,4 @@ class Index extends \Lofmp\HelpDesk\Controller\Marketplace\Quickanswer
         $this->initPage($resultPage)->getConfig()->getTitle()->prepend(__('HelpDesk'));
         return $resultPage;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Lof_HelpDesk::quickanswer');
-    }
 }

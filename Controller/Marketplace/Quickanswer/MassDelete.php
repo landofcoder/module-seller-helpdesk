@@ -73,12 +73,4 @@ class MassDelete extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         return $resultRedirect->setPath('*/*/');
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Lof_HelpDesk::quickanswer_delete');
-    }
 }

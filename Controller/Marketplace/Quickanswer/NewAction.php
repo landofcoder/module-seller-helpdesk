@@ -55,11 +55,4 @@ class NewAction extends \Lofmp\HelpDesk\Controller\Marketplace\Quickanswer
         return $resultForward->forward('edit');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Lof_HelpDesk::quickanswer_edit');
-    }
 }

@@ -44,14 +44,6 @@ class Edit extends \Lofmp\HelpDesk\Controller\Marketplace\Quickanswer
     }
 
     /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Lof_HelpDesk::quickanswer_edit');
-    }
-
-    /**
      * Edit HelpDesk Form
      *
      * @return \Magento\Framework\Controller\ResultInterface

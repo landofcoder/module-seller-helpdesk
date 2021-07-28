@@ -23,11 +23,6 @@ namespace Lofmp\HelpDesk\Controller\Marketplace\Quickanswer;
 
 class Delete extends \Lofmp\HelpDesk\Controller\Marketplace\Quickanswer
 {
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Lof_HelpDesk::quickanswer_delete');
-    }
-
     /**
      * Delete action
      *
