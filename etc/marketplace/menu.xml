@@ -26,7 +26,7 @@
         title="HelpDesk" 
         module="Lofmp_HelpDesk" 
         sortOrder="290" 
-        icon="fa fa-gavel" 
+        icon="fa fa-life-ring" 
         resource="Lofmp_HelpDesk::helpdesk"
       />
     	<add 
