@@ -21,7 +21,7 @@
 
 namespace Lofmp\HelpDesk\Controller\Marketplace\Ticket;
 
-class NewAction extends \Lofmp\HelpDesk\Controller\Marketplace\Spam
+class NewAction extends \Lofmp\HelpDesk\Controller\Marketplace\Ticket
 {
     /**
      * @var \Magento\Backend\Model\View\Result\ForwardFactory
