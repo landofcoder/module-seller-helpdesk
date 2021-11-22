@@ -24,7 +24,7 @@ namespace Lofmp\HelpDesk\Controller\Marketplace\Quickanswer;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Backend\App\Action\Context;
 use Magento\Ui\Component\MassAction\Filter;
-use Lofmp\HelpDesk\Model\ResourceModel\Quickanswer\CollectionFactory;
+use Lof\HelpDesk\Model\ResourceModel\Quickanswer\CollectionFactory;
 
 /**
  * Class MassDelete
